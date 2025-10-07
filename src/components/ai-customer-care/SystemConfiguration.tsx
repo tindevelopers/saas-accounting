@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { 
   CpuChipIcon,
   ServerIcon,
-  DatabaseIcon,
+  CircleStackIcon,
   CloudIcon
 } from "@heroicons/react/24/outline";
 
@@ -79,7 +79,7 @@ export default function SystemConfiguration() {
         {/* Data Management */}
         <div>
           <h4 className="text-sm font-medium text-gray-900 dark:text-white mb-4 flex items-center">
-            <DatabaseIcon className="w-4 h-4 mr-2" />
+            <CircleStackIcon className="w-4 h-4 mr-2" />
             Data Management
           </h4>
           <div className="space-y-4">

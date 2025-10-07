@@ -142,7 +142,7 @@ Content-Type: application/json`}
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">Create a new AI agent with configuration.</p>
           </div>
           <div>
-            <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">POST /api/v1/agents/{id}/train</h4>
+            <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">POST /api/v1/agents/:id/train</h4>
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">Train an existing agent with new data.</p>
           </div>
         </div>
