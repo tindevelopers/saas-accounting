@@ -3,6 +3,8 @@
 import { useSidebar } from "@/context/SidebarContext";
 import AppHeader from "@/layout/AppHeader";
 import AppSidebar from "@/layout/AppSidebar";
+import BlogWriterSidebar from "@/layout/BlogWriterSidebar";
+import AICustomerCareSidebar from "@/layout/AICustomerCareSidebar";
 import Backdrop from "@/layout/Backdrop";
 import React from "react";
 import { usePathname } from "next/navigation";
@@ -26,10 +28,22 @@ export default function TemplateLayout({
     ? "xl:ml-[290px]"
     : "xl:ml-[90px]";
 
+  // Function to render the appropriate sidebar based on template
+  const renderSidebar = () => {
+    switch (templateName) {
+      case 'blog-writer':
+        return <BlogWriterSidebar />;
+      case 'ai-customer-care':
+        return <AICustomerCareSidebar />;
+      default:
+        return <AppSidebar />;
+    }
+  };
+
   return (
     <div className="min-h-screen xl:flex">
       {/* Sidebar and Backdrop */}
-      <AppSidebar />
+      {renderSidebar()}
       <Backdrop />
       
       {/* Main Content Area */}
