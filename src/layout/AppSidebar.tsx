@@ -1,3 +1,4 @@
+// AppSidebar component - Main navigation sidebar for the admin panel
 "use client";
 import React, { useEffect, useRef, useCallback, useState } from "react";
 import Link from "next/link";
