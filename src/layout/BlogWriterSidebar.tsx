@@ -44,6 +44,9 @@ const blogWriterItems: NavItem[] = [
       { name: "Dashboard", path: "/templates/blog-writer" },
       { name: "Drafts", path: "/templates/blog-writer/drafts", new: true },
       { name: "Media Library", path: "/templates/blog-writer/media", new: true },
+      { name: "Comments Management", path: "/templates/blog-writer/comments", new: true },
+      { name: "Categories & Tags", path: "/templates/blog-writer/categories", new: true },
+      { name: "Authors Management", path: "/templates/blog-writer/authors", new: true },
       { name: "Content Calendar", path: "/templates/blog-writer/calendar", pro: true },
       { name: "Post Analytics", path: "/templates/blog-writer/analytics", pro: true },
       { name: "SEO Tools", path: "/templates/blog-writer/seo", pro: true },
@@ -269,8 +272,8 @@ const BlogWriterSidebar: React.FC = () => {
         ref={sidebarRef}
         className={`fixed left-0 top-0 z-50 h-full bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700 transition-all duration-300 ease-in-out ${
           isMobileOpen ? "translate-x-0 w-80" : "-translate-x-full w-80"
-        } xl:relative xl:translate-x-0 xl:border-r xl:bg-white xl:dark:bg-gray-900 ${
-          isExpanded || isHovered ? "xl:w-80" : "xl:w-20"
+        } xl:translate-x-0 xl:border-r xl:bg-white xl:dark:bg-gray-900 ${
+          isExpanded || isHovered ? "xl:w-[290px]" : "xl:w-[90px]"
         }`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
