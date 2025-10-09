@@ -52,22 +52,22 @@ const othersItems: NavItem[] = [];
 
 const supportItems: NavItem[] = [];
 
-// Blog Writer specific navigation items
+// AI Customer Care specific navigation items
 const templateItems: NavItem[] = [
   {
-    name: "Blog Writer",
+    name: "AI Customer Care",
     icon: <AiIcon />,
     new: true,
     subItems: [
-      { name: "Dashboard", path: "/templates/blog-writer" },
+      { name: "Dashboard", path: "/templates/ai-customer-care" },
       { 
         name: "User Profile", 
         isAccordionHeader: true,
         new: true,
         subItems: [
-          { name: "User Details", path: "/templates/blog-writer/profile/details" },
-          { name: "Change Password", path: "/templates/blog-writer/profile/change-password" },
-          { name: "Access Control", path: "/templates/blog-writer/profile/access" },
+          { name: "User Details", path: "/templates/ai-customer-care/profile/details" },
+          { name: "Change Password", path: "/templates/ai-customer-care/profile/change-password" },
+          { name: "Access Control", path: "/templates/ai-customer-care/profile/access" },
         ]
       },
       { 
@@ -75,16 +75,21 @@ const templateItems: NavItem[] = [
         isAccordionHeader: true,
         new: true,
         subItems: [
-          { name: "Content Editor", path: "/templates/blog-writer/editor", new: true },
-          { name: "Article Manager", path: "/templates/blog-writer/articles", new: true },
-          { name: "SEO Tools", path: "/templates/blog-writer/seo", new: true },
-          { name: "Media Library", path: "/templates/blog-writer/media", new: true },
-          { name: "Publishing", path: "/templates/blog-writer/publishing", new: true },
-          { name: "Analytics", path: "/templates/blog-writer/analytics", pro: true },
-          { name: "Templates", path: "/templates/blog-writer/templates", new: true },
-          { name: "Categories", path: "/templates/blog-writer/categories", new: true },
-          { name: "Tags", path: "/templates/blog-writer/tags", new: true },
-          { name: "Settings", path: "/templates/blog-writer/settings", new: true },
+          { name: "Chat Agent", path: "/templates/ai-customer-care/agents/chat", new: true },
+          { name: "Voice Agent", path: "/templates/ai-customer-care/agents/voice", new: true },
+          { name: "Knowledge Base", path: "/templates/ai-customer-care/knowledge", new: true },
+          { name: "Conversation Flows", path: "/templates/ai-customer-care/flows", new: true },
+          { name: "Call History", path: "/templates/ai-customer-care/calls/history", new: true },
+          { name: "Analytics", path: "/templates/ai-customer-care/analytics", pro: true },
+          { name: "Quality Control", path: "/templates/ai-customer-care/quality", pro: true },
+          { name: "Monitoring", path: "/templates/ai-customer-care/monitoring", pro: true },
+          { name: "Phone Numbers", path: "/templates/ai-customer-care/numbers", new: true },
+          { name: "Integrations", path: "/templates/ai-customer-care/integrations", new: true },
+          { name: "API Playground", path: "/templates/ai-customer-care/api-playground", new: true },
+          { name: "Webhooks", path: "/templates/ai-customer-care/webhooks", new: true },
+          { name: "Users", path: "/templates/ai-customer-care/users", new: true },
+          { name: "Settings", path: "/templates/ai-customer-care/settings", new: true },
+          { name: "Tenant Settings", path: "/templates/ai-customer-care/tenant-settings", pro: true },
         ]
       },
     ],
@@ -543,7 +548,9 @@ const AppSidebar: React.FC = () => {
                 height={32}
               />
               <span className="text-xl font-bold text-gray-900 dark:text-white">
-                {pathname.startsWith('/templates/blog-writer')
+                {pathname.startsWith('/templates/ai-customer-care')
+                  ? 'AI Customer Care:'
+                  : pathname.startsWith('/templates/blog-writer')
                   ? 'Blog Writer:'
                   : 'TIN Admin:'}
               </span>
@@ -561,7 +568,7 @@ const AppSidebar: React.FC = () => {
       <div className="flex flex-col overflow-y-auto  duration-300 ease-linear no-scrollbar">
         <nav className="mb-6">
           <div className="flex flex-col gap-4">
-            {/* Blog Writer Navigation */}
+            {/* Template Navigation */}
           <div>
             <h2
               className={`mb-4 text-xs uppercase flex leading-5 text-gray-400 ${
@@ -571,7 +578,11 @@ const AppSidebar: React.FC = () => {
               }`}
             >
               {isExpanded || isHovered || isMobileOpen ? (
-                "Blog Writer"
+                pathname.startsWith('/templates/ai-customer-care')
+                  ? "AI Customer Care"
+                  : pathname.startsWith('/templates/blog-writer')
+                  ? "Blog Writer"
+                  : "Templates"
               ) : (
                 <HorizontaLDots />
               )}
