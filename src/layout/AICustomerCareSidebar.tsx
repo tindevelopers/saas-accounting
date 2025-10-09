@@ -136,11 +136,12 @@ const supportItems: NavItem[] = [
 ];
 
 const AICustomerCareSidebar: React.FC = () => {
-  const { isExpanded, isMobileOpen, isHovered, setIsHovered } = useSidebar();
+  const { isExpanded, isMobileOpen, isHovered, setIsHovered, toggleMobileSidebar } = useSidebar();
   const pathname = usePathname();
 
   const renderMenuItems = (
-    navItems: NavItem[]
+    navItems: NavItem[],
+    _menuType?: string
   ) => (
     <ul className="flex flex-col gap-1">
       {navItems.map((nav) => (
@@ -243,11 +244,10 @@ const AICustomerCareSidebar: React.FC = () => {
         isMobileOpen
       ) {
         // Close mobile sidebar when clicking outside
-        const { toggleMobileSidebar } = useSidebar.getState();
         toggleMobileSidebar();
       }
     },
-    [isMobileOpen]
+    [isMobileOpen, toggleMobileSidebar]
   );
 
   useEffect(() => {
