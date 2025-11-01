@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */"use client";
+"use client";
 
 import React, { useState } from "react";
 
@@ -27,7 +27,8 @@ export default function KnowledgeBaseUpload() {
     }
   };
 
-  const handleFiles = (files: FileList) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const handleFiles = (_files: FileList) => {
     setIsUploading(true);
     setUploadProgress(0);
     

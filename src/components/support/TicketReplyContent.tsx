@@ -121,7 +121,7 @@ export default function TicketReplyContent() {
                 />
                 <div>
                   <p className="text-sm font-medium text-gray-800 dark:text-white/90">
-                    Musharof Chowdhury
+                    John Smith
                   </p>
                   <p className="text-xs text-gray-500 dark:text-gray-400">
                     From - tailadmin support team

@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */"use client";
+"use client";
 
 import React, { useState } from "react";
 import { 
@@ -12,6 +12,7 @@ import {
 
 export default function TenantAnalytics() {
   const [timeRange, setTimeRange] = useState("30d");
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [analyticsData, setAnalyticsData] = useState({
     overview: {
       totalCalls: 15420,

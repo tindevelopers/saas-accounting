@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */"use client";
+"use client";
 
 import React, { useState } from "react";
 import { 
@@ -6,9 +6,7 @@ import {
   PhoneIcon,
   MicrophoneIcon,
   SpeakerWaveIcon,
-  ChatBubbleLeftRightIcon,
-  UserPlusIcon,
-  XMarkIcon
+  UserPlusIcon
 } from "@heroicons/react/24/outline";
 
 interface ActiveCall {

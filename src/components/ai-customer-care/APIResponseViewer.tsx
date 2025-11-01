@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */"use client";
+"use client";
 
 import React, { useState } from "react";
 import { 
@@ -11,6 +11,7 @@ import {
 } from "@heroicons/react/24/outline";
 
 export default function APIResponseViewer() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [response, setResponse] = useState({
     status: 200,
     statusText: "OK",

@@ -1,12 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */"use client";
+"use client";
 
 import React, { useState } from "react";
 import { 
   StarIcon,
   PlayIcon,
-  PauseIcon,
   CheckCircleIcon,
-  XCircleIcon,
   ExclamationTriangleIcon,
   ClockIcon,
   UserIcon

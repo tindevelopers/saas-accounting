@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */"use client";
+"use client";
 
 import React, { useState } from "react";
 import { 
   UsersIcon,
-  PlusIcon,
   PencilIcon,
   TrashIcon,
   EyeIcon,
@@ -103,6 +102,7 @@ export default function UserManagement() {
   const [filter, setFilter] = useState<string>("all");
   const [searchTerm, setSearchTerm] = useState("");
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const getStatusIcon = (status: string) => {
     switch (status) {
       case "active":

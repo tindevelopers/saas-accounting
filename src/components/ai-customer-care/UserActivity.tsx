@@ -1,11 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */"use client";
+"use client";
 
 import React, { useState } from "react";
 import { 
   ClockIcon,
   ComputerDesktopIcon,
   MapPinIcon,
-  ShieldCheckIcon,
   ExclamationTriangleIcon,
   CheckCircleIcon
 } from "@heroicons/react/24/outline";
@@ -126,6 +125,7 @@ const mockActivities: Activity[] = [
 ];
 
 export default function UserActivity() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [activities, setActivities] = useState<Activity[]>(mockActivities);
   const [filter, setFilter] = useState<string>("all");
   const [timeRange, setTimeRange] = useState<string>("24h");

@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */"use client";
+"use client";
 
 import React, { useState } from "react";
 import { 
   QueueListIcon,
-  ClockIcon,
   ExclamationTriangleIcon,
   CheckCircleIcon,
   ArrowUpIcon,
@@ -70,6 +69,7 @@ const mockQueueItems: QueueItem[] = [
 ];
 
 export default function CallQueueStatus() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [queueItems, setQueueItems] = useState<QueueItem[]>(mockQueueItems);
   const [sortBy, setSortBy] = useState<"priority" | "waitTime">("priority");
 
