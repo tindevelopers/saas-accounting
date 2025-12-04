@@ -22,7 +22,7 @@ jobs:
           cache: 'npm'
           
       - name: Cache npm dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ~/.npm
@@ -66,7 +66,7 @@ jobs:
           cache: 'npm'
           
       - name: Cache npm dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ~/.npm
@@ -183,7 +183,7 @@ jobs:
           cache: 'npm'
           
       - name: Cache npm dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ~/.npm
