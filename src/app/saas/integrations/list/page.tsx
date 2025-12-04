@@ -180,7 +180,7 @@ export default function IntegrationsListPage() {
                     return (
                       <Link
                         key={integration.id}
-                        href={`/templates/saas/integrations/${integration.category.toLowerCase().replace(/\s+/g, "-")}/${integration.name.toLowerCase().replace(/\s+/g, "-")}`}
+                        href={`/saas/integrations/${integration.category.toLowerCase().replace(/\s+/g, "-")}/${integration.name.toLowerCase().replace(/\s+/g, "-")}`}
                         className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md dark:border-gray-800 dark:bg-gray-900"
                       >
                         <div className="mb-4 flex items-start justify-between">

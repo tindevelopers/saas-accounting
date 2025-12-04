@@ -5,10 +5,10 @@ import { CheckIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import React from "react";
 
-const ecommerceIntegrations = [
-  { name: "Shopify", slug: "shopify", status: "connected", description: "E-commerce platform" },
-  { name: "WooCommerce", slug: "woocommerce", status: "disconnected", description: "WordPress e-commerce plugin" },
-  { name: "BigCommerce", slug: "bigcommerce", status: "disconnected", description: "E-commerce platform" },
+const analyticsIntegrations = [
+  { name: "Google Analytics", slug: "google-analytics", status: "connected", description: "Web analytics service" },
+  { name: "Mixpanel", slug: "mixpanel", status: "disconnected", description: "Product analytics platform" },
+  { name: "Amplitude", slug: "amplitude", status: "disconnected", description: "Product analytics and data" },
 ];
 
 const statusIcons = {
@@ -21,27 +21,27 @@ const statusColors = {
   disconnected: "bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300",
 };
 
-export default function EcommerceIntegrationsPage() {
+export default function AnalyticsIntegrationsPage() {
   return (
     <div>
-      <PageBreadcrumb pageTitle="E-commerce Integrations" />
+      <PageBreadcrumb pageTitle="Analytics Integrations" />
       <div className="space-y-6">
         <div>
           <h1 className="text-3xl font-semibold text-gray-900 dark:text-white">
-            E-commerce Integrations
+            Analytics Integrations
           </h1>
           <p className="mt-2 text-gray-500 dark:text-gray-400">
-            Connect e-commerce platforms to sync products, orders, and customers
+            Connect analytics platforms to track user behavior and metrics
           </p>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {ecommerceIntegrations.map((integration) => {
+          {analyticsIntegrations.map((integration) => {
             const Icon = statusIcons[integration.status as keyof typeof statusIcons];
             return (
               <Link
                 key={integration.slug}
-                href={`/templates/saas/integrations/ecommerce/${integration.slug}`}
+                href={`/saas/integrations/analytics/${integration.slug}`}
                 className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md dark:border-gray-800 dark:bg-gray-900"
               >
                 <div className="mb-4 flex items-start justify-between">

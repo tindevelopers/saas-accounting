@@ -1,45 +1,48 @@
 "use client";
 import PageBreadcrumb from "@/components/common/PageBreadCrumb";
 import Button from "@/components/ui/button/Button";
-import { XMarkIcon } from "@heroicons/react/24/outline";
+import { CheckIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import React from "react";
 
-const accountingIntegrations = [
-  { name: "QuickBooks", slug: "quickbooks", status: "disconnected", description: "Accounting software" },
-  { name: "Xero", slug: "xero", status: "disconnected", description: "Cloud-based accounting" },
-  { name: "FreshBooks", slug: "freshbooks", status: "disconnected", description: "Cloud accounting software" },
+const emailIntegrations = [
+  { name: "Mailchimp", slug: "mailchimp", status: "connected", description: "Email marketing and automation" },
+  { name: "SendGrid", slug: "sendgrid", status: "connected", description: "Email delivery service" },
+  { name: "ConvertKit", slug: "convertkit", status: "disconnected", description: "Email marketing for creators" },
+  { name: "ActiveCampaign", slug: "activecampaign", status: "disconnected", description: "Marketing automation platform" },
 ];
 
 const statusIcons = {
+  connected: CheckIcon,
   disconnected: XMarkIcon,
 };
 
 const statusColors = {
+  connected: "bg-green-100 text-green-700 dark:bg-green-500/15 dark:text-green-500",
   disconnected: "bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300",
 };
 
-export default function AccountingIntegrationsPage() {
+export default function EmailMarketingIntegrationsPage() {
   return (
     <div>
-      <PageBreadcrumb pageTitle="Accounting Integrations" />
+      <PageBreadcrumb pageTitle="Email Marketing Integrations" />
       <div className="space-y-6">
         <div>
           <h1 className="text-3xl font-semibold text-gray-900 dark:text-white">
-            Accounting Integrations
+            Email Marketing Integrations
           </h1>
           <p className="mt-2 text-gray-500 dark:text-gray-400">
-            Connect accounting software to sync invoices, expenses, and financial data
+            Connect email marketing platforms to sync contacts and send campaigns
           </p>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {accountingIntegrations.map((integration) => {
+          {emailIntegrations.map((integration) => {
             const Icon = statusIcons[integration.status as keyof typeof statusIcons];
             return (
               <Link
                 key={integration.slug}
-                href={`/templates/saas/integrations/accounting/${integration.slug}`}
+                href={`/saas/integrations/email-marketing/${integration.slug}`}
                 className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md dark:border-gray-800 dark:bg-gray-900"
               >
                 <div className="mb-4 flex items-start justify-between">
@@ -61,7 +64,7 @@ export default function AccountingIntegrationsPage() {
                   </span>
                 </div>
                 <Button variant="outline" size="sm" className="w-full">
-                  Connect
+                  {integration.status === "connected" ? "Configure" : "Connect"}
                 </Button>
               </Link>
             );

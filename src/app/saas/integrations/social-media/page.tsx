@@ -1,47 +1,46 @@
 "use client";
 import PageBreadcrumb from "@/components/common/PageBreadCrumb";
 import Button from "@/components/ui/button/Button";
-import { CheckIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import React from "react";
 
-const analyticsIntegrations = [
-  { name: "Google Analytics", slug: "google-analytics", status: "connected", description: "Web analytics service" },
-  { name: "Mixpanel", slug: "mixpanel", status: "disconnected", description: "Product analytics platform" },
-  { name: "Amplitude", slug: "amplitude", status: "disconnected", description: "Product analytics and data" },
+const socialMediaIntegrations = [
+  { name: "Facebook", slug: "facebook", status: "disconnected", description: "Facebook Pages and Ads" },
+  { name: "Twitter/X", slug: "twitter", status: "disconnected", description: "Twitter/X API integration" },
+  { name: "LinkedIn", slug: "linkedin", status: "disconnected", description: "LinkedIn Pages and Ads" },
+  { name: "Instagram", slug: "instagram", status: "disconnected", description: "Instagram Business API" },
 ];
 
 const statusIcons = {
-  connected: CheckIcon,
   disconnected: XMarkIcon,
 };
 
 const statusColors = {
-  connected: "bg-green-100 text-green-700 dark:bg-green-500/15 dark:text-green-500",
   disconnected: "bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300",
 };
 
-export default function AnalyticsIntegrationsPage() {
+export default function SocialMediaIntegrationsPage() {
   return (
     <div>
-      <PageBreadcrumb pageTitle="Analytics Integrations" />
+      <PageBreadcrumb pageTitle="Social Media Integrations" />
       <div className="space-y-6">
         <div>
           <h1 className="text-3xl font-semibold text-gray-900 dark:text-white">
-            Analytics Integrations
+            Social Media Integrations
           </h1>
           <p className="mt-2 text-gray-500 dark:text-gray-400">
-            Connect analytics platforms to track user behavior and metrics
+            Connect social media platforms to manage posts, ads, and engagement
           </p>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {analyticsIntegrations.map((integration) => {
+          {socialMediaIntegrations.map((integration) => {
             const Icon = statusIcons[integration.status as keyof typeof statusIcons];
             return (
               <Link
                 key={integration.slug}
-                href={`/templates/saas/integrations/analytics/${integration.slug}`}
+                href={`/saas/integrations/social-media/${integration.slug}`}
                 className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md dark:border-gray-800 dark:bg-gray-900"
               >
                 <div className="mb-4 flex items-start justify-between">
@@ -63,7 +62,7 @@ export default function AnalyticsIntegrationsPage() {
                   </span>
                 </div>
                 <Button variant="outline" size="sm" className="w-full">
-                  {integration.status === "connected" ? "Configure" : "Connect"}
+                  Connect
                 </Button>
               </Link>
             );

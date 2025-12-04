@@ -7,5 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function AdminDashboard() {
-  redirect("/templates/saas/dashboard");
+  redirect("/saas/dashboard");
 }

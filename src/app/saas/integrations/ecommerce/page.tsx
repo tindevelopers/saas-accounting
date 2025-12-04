@@ -5,10 +5,10 @@ import { CheckIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import React from "react";
 
-const telephonyIntegrations = [
-  { name: "Twilio", slug: "twilio", status: "connected", description: "Cloud communications platform" },
-  { name: "Telnyx", slug: "telnyx", status: "disconnected", description: "Global communications API" },
-  { name: "Vonage", slug: "vonage", status: "disconnected", description: "Cloud communications" },
+const ecommerceIntegrations = [
+  { name: "Shopify", slug: "shopify", status: "connected", description: "E-commerce platform" },
+  { name: "WooCommerce", slug: "woocommerce", status: "disconnected", description: "WordPress e-commerce plugin" },
+  { name: "BigCommerce", slug: "bigcommerce", status: "disconnected", description: "E-commerce platform" },
 ];
 
 const statusIcons = {
@@ -21,27 +21,27 @@ const statusColors = {
   disconnected: "bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300",
 };
 
-export default function TelephonyIntegrationsPage() {
+export default function EcommerceIntegrationsPage() {
   return (
     <div>
-      <PageBreadcrumb pageTitle="Telephony Integrations" />
+      <PageBreadcrumb pageTitle="E-commerce Integrations" />
       <div className="space-y-6">
         <div>
           <h1 className="text-3xl font-semibold text-gray-900 dark:text-white">
-            Telephony Integrations
+            E-commerce Integrations
           </h1>
           <p className="mt-2 text-gray-500 dark:text-gray-400">
-            Connect telephony platforms for SMS, voice calls, and messaging
+            Connect e-commerce platforms to sync products, orders, and customers
           </p>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {telephonyIntegrations.map((integration) => {
+          {ecommerceIntegrations.map((integration) => {
             const Icon = statusIcons[integration.status as keyof typeof statusIcons];
             return (
               <Link
                 key={integration.slug}
-                href={`/templates/saas/integrations/telephony/${integration.slug}`}
+                href={`/saas/integrations/ecommerce/${integration.slug}`}
                 className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md dark:border-gray-800 dark:bg-gray-900"
               >
                 <div className="mb-4 flex items-start justify-between">

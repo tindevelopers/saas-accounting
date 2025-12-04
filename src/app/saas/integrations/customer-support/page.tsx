@@ -5,11 +5,10 @@ import { CheckIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import React from "react";
 
-const emailIntegrations = [
-  { name: "Mailchimp", slug: "mailchimp", status: "connected", description: "Email marketing and automation" },
-  { name: "SendGrid", slug: "sendgrid", status: "connected", description: "Email delivery service" },
-  { name: "ConvertKit", slug: "convertkit", status: "disconnected", description: "Email marketing for creators" },
-  { name: "ActiveCampaign", slug: "activecampaign", status: "disconnected", description: "Marketing automation platform" },
+const supportIntegrations = [
+  { name: "Zendesk", slug: "zendesk", status: "connected", description: "Customer service platform" },
+  { name: "Intercom", slug: "intercom", status: "disconnected", description: "Customer messaging platform" },
+  { name: "Freshdesk", slug: "freshdesk", status: "disconnected", description: "Customer support software" },
 ];
 
 const statusIcons = {
@@ -22,27 +21,27 @@ const statusColors = {
   disconnected: "bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300",
 };
 
-export default function EmailMarketingIntegrationsPage() {
+export default function CustomerSupportIntegrationsPage() {
   return (
     <div>
-      <PageBreadcrumb pageTitle="Email Marketing Integrations" />
+      <PageBreadcrumb pageTitle="Customer Support Integrations" />
       <div className="space-y-6">
         <div>
           <h1 className="text-3xl font-semibold text-gray-900 dark:text-white">
-            Email Marketing Integrations
+            Customer Support Integrations
           </h1>
           <p className="mt-2 text-gray-500 dark:text-gray-400">
-            Connect email marketing platforms to sync contacts and send campaigns
+            Connect customer support platforms to sync tickets and customer data
           </p>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {emailIntegrations.map((integration) => {
+          {supportIntegrations.map((integration) => {
             const Icon = statusIcons[integration.status as keyof typeof statusIcons];
             return (
               <Link
                 key={integration.slug}
-                href={`/templates/saas/integrations/email-marketing/${integration.slug}`}
+                href={`/saas/integrations/customer-support/${integration.slug}`}
                 className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md dark:border-gray-800 dark:bg-gray-900"
               >
                 <div className="mb-4 flex items-start justify-between">

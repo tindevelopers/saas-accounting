@@ -5,11 +5,10 @@ import { CheckIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import React from "react";
 
-const paymentIntegrations = [
-  { name: "Stripe", slug: "stripe", status: "connected", description: "Online payment processing" },
-  { name: "PayPal", slug: "paypal", status: "disconnected", description: "Online payment system" },
-  { name: "Square", slug: "square", status: "disconnected", description: "Payment processing and POS" },
-  { name: "Braintree", slug: "braintree", status: "disconnected", description: "Payment processing gateway" },
+const telephonyIntegrations = [
+  { name: "Twilio", slug: "twilio", status: "connected", description: "Cloud communications platform" },
+  { name: "Telnyx", slug: "telnyx", status: "disconnected", description: "Global communications API" },
+  { name: "Vonage", slug: "vonage", status: "disconnected", description: "Cloud communications" },
 ];
 
 const statusIcons = {
@@ -22,27 +21,27 @@ const statusColors = {
   disconnected: "bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300",
 };
 
-export default function PaymentIntegrationsPage() {
+export default function TelephonyIntegrationsPage() {
   return (
     <div>
-      <PageBreadcrumb pageTitle="Payment Integrations" />
+      <PageBreadcrumb pageTitle="Telephony Integrations" />
       <div className="space-y-6">
         <div>
           <h1 className="text-3xl font-semibold text-gray-900 dark:text-white">
-            Payment Integrations
+            Telephony Integrations
           </h1>
           <p className="mt-2 text-gray-500 dark:text-gray-400">
-            Connect payment processors to accept payments and manage transactions
+            Connect telephony platforms for SMS, voice calls, and messaging
           </p>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {paymentIntegrations.map((integration) => {
+          {telephonyIntegrations.map((integration) => {
             const Icon = statusIcons[integration.status as keyof typeof statusIcons];
             return (
               <Link
                 key={integration.slug}
-                href={`/templates/saas/integrations/payments/${integration.slug}`}
+                href={`/saas/integrations/telephony/${integration.slug}`}
                 className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md dark:border-gray-800 dark:bg-gray-900"
               >
                 <div className="mb-4 flex items-start justify-between">
