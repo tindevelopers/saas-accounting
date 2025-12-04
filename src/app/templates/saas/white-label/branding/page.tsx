@@ -4,7 +4,7 @@ import Button from "@/components/ui/button/Button";
 import Input from "@/components/form/input/InputField";
 import Label from "@/components/form/Label";
 import Image from "next/image";
-import { UploadIcon } from "@heroicons/react/24/outline";
+import { ArrowUpTrayIcon } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
 
 export default function WhiteLabelBrandingPage() {
@@ -84,7 +84,7 @@ export default function WhiteLabelBrandingPage() {
                   />
                 </div>
                 <Button variant="outline" size="sm">
-                  <UploadIcon className="h-4 w-4" />
+                  <ArrowUpTrayIcon className="h-4 w-4" />
                   Upload Logo
                 </Button>
               </div>
@@ -105,7 +105,7 @@ export default function WhiteLabelBrandingPage() {
                   />
                 </div>
                 <Button variant="outline" size="sm">
-                  <UploadIcon className="h-4 w-4" />
+                  <ArrowUpTrayIcon className="h-4 w-4" />
                   Upload Favicon
                 </Button>
               </div>

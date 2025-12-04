@@ -219,7 +219,7 @@ export default function EmailTemplatesPage() {
               <TextArea
                 id="template-content"
                 rows={10}
-                defaultValue={formData.content}
+                value={formData.content}
                 onChange={(value) => setFormData({ ...formData, content: value })}
                 placeholder="Enter email HTML content..."
               />

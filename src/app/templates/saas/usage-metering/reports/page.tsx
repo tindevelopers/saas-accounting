@@ -24,6 +24,7 @@ const reports: UsageReport[] = [
     usage: 15299,
     limit: 25500,
     period: "January",
+    status: "within_limit",
   },
   {
     id: "2",

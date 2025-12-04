@@ -16,9 +16,10 @@ interface IntegrationConfig {
   fields: Array<{
     name: string;
     label: string;
-    type: "text" | "password" | "url" | "email";
+    type: "text" | "password" | "url" | "email" | "select";
     required: boolean;
     placeholder?: string;
+    options?: string[];
   }>;
   additionalSettings?: Array<{
     name: string;
@@ -125,9 +126,6 @@ const integrationConfigs: Record<string, IntegrationConfig> = {
     fields: [
       { name: "clientId", label: "Client ID", type: "text", required: true },
       { name: "clientSecret", label: "Client Secret", type: "password", required: true },
-    ],
-    additionalSettings: [
-      { name: "mode", label: "Mode", type: "select" as const, options: ["sandbox", "live"] },
     ],
     additionalSettings: [
       { name: "mode", label: "Mode", type: "select" as const, options: ["sandbox", "live"] },

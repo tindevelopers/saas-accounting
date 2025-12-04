@@ -5,6 +5,7 @@ interface TextareaProps {
   placeholder?: string; // Placeholder text
   rows?: number; // Number of rows
   value?: string; // Current value
+  defaultValue?: string; // Default value for uncontrolled mode
   onChange?: (value: string) => void; // Change handler
   className?: string; // Additional CSS classes
   disabled?: boolean; // Disabled state
@@ -16,7 +17,8 @@ const TextArea: React.FC<TextareaProps> = ({
   id, // Optional ID
   placeholder = "Enter your message", // Default placeholder
   rows = 3, // Default number of rows
-  value = "", // Default value
+  value, // Controlled value
+  defaultValue, // Uncontrolled default value
   onChange, // Callback for changes
   className = "", // Additional custom styles
   disabled = false, // Disabled state
@@ -46,6 +48,7 @@ const TextArea: React.FC<TextareaProps> = ({
         placeholder={placeholder}
         rows={rows}
         value={value}
+        defaultValue={defaultValue}
         onChange={handleChange}
         disabled={disabled}
         className={textareaClasses}

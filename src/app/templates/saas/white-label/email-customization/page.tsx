@@ -5,7 +5,7 @@ import Input from "@/components/form/input/InputField";
 import Label from "@/components/form/Label";
 import TextArea from "@/components/form/input/TextArea";
 import Image from "next/image";
-import { UploadIcon } from "@heroicons/react/24/outline";
+import { ArrowUpTrayIcon } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
 
 export default function EmailCustomizationPage() {
@@ -85,7 +85,7 @@ export default function EmailCustomizationPage() {
                   />
                 </div>
                 <Button variant="outline" size="sm">
-                  <UploadIcon className="h-4 w-4" />
+                  <ArrowUpTrayIcon className="h-4 w-4" />
                   Upload Logo
                 </Button>
               </div>

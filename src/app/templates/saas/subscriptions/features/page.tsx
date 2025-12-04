@@ -51,6 +51,8 @@ const initialFeatures: Feature[] = [
 
 export default function PlanFeaturesPage() {
   const [features] = useState<Feature[]>(initialFeatures);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [, setIsCreating] = useState(false);
 
   return (
     <div>

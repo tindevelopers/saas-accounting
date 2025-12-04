@@ -31,6 +31,7 @@ type NavItem = {
   icon?: React.ReactNode;
   path?: string;
   new?: boolean;
+  pro?: boolean;
   subItems?: (NavItem | { name: string; path: string; pro?: boolean; new?: boolean })[];
 };
 
@@ -585,7 +586,7 @@ const AppSidebar: React.FC = () => {
                         {isNestedOpen && (
                           <ul className="mt-1 ml-4 space-y-1" role="menu">
                             {subItem.subItems?.map((nestedItem) => {
-                              if ('path' in nestedItem) {
+                              if ('path' in nestedItem && nestedItem.path) {
                                 return (
                                   <li key={nestedItem.name} role="none">
                                     <Link
@@ -611,7 +612,7 @@ const AppSidebar: React.FC = () => {
                   }
 
                   // Regular submenu item with path
-                  if ('path' in subItem) {
+                  if ('path' in subItem && subItem.path) {
                     return (
                       <li key={subItem.name} role="none">
                         <Link

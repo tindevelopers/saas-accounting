@@ -12,9 +12,10 @@ interface InputProps {
   className?: string;
   min?: string;
   max?: string;
-  step?: number;
+  step?: number | string;
   maxLength?: number;
   disabled?: boolean;
+  required?: boolean;
   success?: boolean;
   error?: boolean;
   hint?: string;
@@ -34,6 +35,7 @@ const Input: FC<InputProps> = ({
   step,
   maxLength,
   disabled = false,
+  required = false,
   success = false,
   error = false,
   hint,
@@ -65,6 +67,7 @@ const Input: FC<InputProps> = ({
         step={step}
         maxLength={maxLength}
         disabled={disabled}
+        required={required}
         className={inputClasses}
       />
 
